@@ -39,7 +39,7 @@ def seleccionar_archivo_csv():
 
 def guardar_csv(df, ruta_original):
     nombre, ext = os.path.splitext(ruta_original)
-    nuevo_nombre = f"{nombre}_analizado.csv"
+    nuevo_nombre = f"{nombre}_polarizado.csv"
     df.to_csv(nuevo_nombre, index=False)
     print(f"\n✅ Archivo guardado como: {nuevo_nombre}")
 
@@ -52,7 +52,7 @@ def main():
     df = pd.read_csv(ruta_csv)
 
     columnas_a_analizar = []
-    for col in ['Comentario', 'Título del video', 'Descripción']:
+    for col in ['Comentario', 'Titulo_Video', 'Descripcion_Video']:
         if col in df.columns:
             columnas_a_analizar.append(col)
         else:
